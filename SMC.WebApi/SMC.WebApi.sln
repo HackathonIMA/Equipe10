@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMC.WebApi", "SMC.WebApi\SMC.WebApi.csproj", "{45242447-A56C-4209-9F84-8EE84CD4865C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ima.Api.V1", "SMC.WebApi\ThirdParty\Ima.Api.V1\Ima.Api.V1.csproj", "{A5E663A9-8141-45D2-B2CA-53A997E9AFB9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDK", "SDK", "{3B9D0A24-7FBC-4C6A-97DD-5EEC8D7C1199}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ima.Api.V1", "..\Ima.Api.V1\Ima.Api.V1.csproj", "{A5E663A9-8141-45D2-B2CA-53A997E9AFB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

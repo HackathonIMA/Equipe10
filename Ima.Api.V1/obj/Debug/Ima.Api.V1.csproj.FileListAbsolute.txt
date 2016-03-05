@@ -1,0 +1,10 @@
+C:\Projects\HackathonCps\Ima.Api.V1\bin\Debug\Ima.Api.V1.dll.config
+C:\Projects\HackathonCps\Ima.Api.V1\bin\Debug\Ima.Api.V1.dll
+C:\Projects\HackathonCps\Ima.Api.V1\bin\Debug\Ima.Api.V1.pdb
+C:\Projects\HackathonCps\Ima.Api.V1\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\HackathonCps\Ima.Api.V1\bin\Debug\RestSharp.dll
+C:\Projects\HackathonCps\Ima.Api.V1\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\HackathonCps\Ima.Api.V1\bin\Debug\RestSharp.xml
+C:\Projects\HackathonCps\Ima.Api.V1\obj\Debug\Ima.Api.V1.csprojResolveAssemblyReference.cache
+C:\Projects\HackathonCps\Ima.Api.V1\obj\Debug\Ima.Api.V1.dll
+C:\Projects\HackathonCps\Ima.Api.V1\obj\Debug\Ima.Api.V1.pdb
