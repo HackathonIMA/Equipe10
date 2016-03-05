@@ -21,7 +21,16 @@ namespace SMC.WebApi.Models
         {
             var educaoApi = new EducaoApi();
 
-            educaoApi.EducacaoGet(Constants.Constants.Token, "0", "100", new List<string>(), new List<string>());
+            var eof = false;
+
+            while (!eof)
+            {
+                var data = educaoApi.EducacaoGet(Constants.Constants.Token, "0", "100", new List<string>(), new List<string>());
+                if (data.Count <= 0)
+                {
+                    eof = true;
+                }
+            }
         }
     }
 }
