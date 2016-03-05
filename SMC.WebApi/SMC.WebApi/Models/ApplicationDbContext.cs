@@ -15,15 +15,12 @@ namespace SMC.WebApi.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<SolicitacaoComentarioModels> SolicitacaoComentarioModels
-        {
-            get; set;
-        }
-
         protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Configurations.Add(new SolicitacaoComentarioModelsMap());
+            modelBuilder.Configurations.Add(new EscolaMap());
         }
+
+        public System.Data.Entity.DbSet<Escola> Escolas { get; set; }
     }
 }

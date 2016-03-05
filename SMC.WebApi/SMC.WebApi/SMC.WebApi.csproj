@@ -205,9 +205,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EscolaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SolicitacaoComentarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,8 +218,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Mappers\SolicitacaoComentarioModelsMap.cs" />
-    <Compile Include="Models\Solicitacao.cs" />
+    <Compile Include="Models\Mappers\EscolaMap.cs" />
+    <Compile Include="Models\Escola.cs" />
     <Compile Include="Models\SolicitacaoComentarioModels.cs" />
     <Compile Include="Models\TimelineModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,6 +292,12 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Ima.Api.V1\Ima.Api.V1.csproj">
+      <Project>{a5e663a9-8141-45d2-b2ca-53a997e9afb9}</Project>
+      <Name>Ima.Api.V1</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
