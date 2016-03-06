@@ -1,0 +1,106 @@
+﻿@model SMC.WebApi.Models.Escola
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Escola</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Regime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Regime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeUnidadeEscolar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeUnidadeEscolar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnderecoEscolaDemanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoEscolaDemanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogradouroDemanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogradouroDemanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MunicipioDemanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MunicipioDemanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UfDemanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UfDemanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CepDemanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CepDemanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,112 @@
+﻿@model SMC.WebApi.Models.Escola
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Escola</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Regime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Regime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeUnidadeEscolar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeUnidadeEscolar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnderecoEscolaDemanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoEscolaDemanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogradouroDemanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogradouroDemanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MunicipioDemanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MunicipioDemanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UfDemanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UfDemanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CepDemanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CepDemanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
