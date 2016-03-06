@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using RestSharp;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace ima.Api.V1.Client
 {
@@ -16,7 +13,6 @@ namespace ima.Api.V1.Client
     /// </summary>
     public class ApiClient
     {
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient"/> class.
         /// </summary>
@@ -30,13 +26,13 @@ namespace ima.Api.V1.Client
         /// <summary>
         /// Gets or sets the base path.
         /// </summary>
-        /// <value>The base path.</value> 
+        /// <value>The base path.</value>
         public string basePath { get; set; }
 
         /// <summary>
         /// Gets or sets the RestClient
         /// </summary>
-        /// <value>The RestClient.</value> 
+        /// <value>The RestClient.</value>
         public RestClient restClient { get; set; }
 
         private Dictionary<String, String> defaultHeaderMap = new Dictionary<String, String>();
@@ -55,7 +51,6 @@ namespace ima.Api.V1.Client
         public async Task<Object> CallApiAsync(String Path, RestSharp.Method Method, Dictionary<String, String> QueryParams, String PostBody,
           Dictionary<String, String> HeaderParams, Dictionary<String, String> FormParams, Dictionary<String, String> FileParams, String[] AuthSettings)
         {
-
             var request = new RestRequest(Path, Method);
 
             UpdateParamsForAuth(QueryParams, HeaderParams, AuthSettings);
@@ -86,7 +81,6 @@ namespace ima.Api.V1.Client
             }
 
             return (Object)await restClient.ExecuteTaskAsync(request);
-
         }
 
         /// <summary>
@@ -167,7 +161,7 @@ namespace ima.Api.V1.Client
         /// <summary>
         /// Serialize an object into JSON string
         /// </summary>
-        /// <param name="obj"> Object 
+        /// <param name="obj"> Object
         /// <returns>JSON string</returns>
         public string Serialize(object obj)
         {
@@ -184,7 +178,7 @@ namespace ima.Api.V1.Client
         /// <summary>
         /// Get the API key with prefix
         /// </summary>
-        /// <param name="obj"> Object 
+        /// <param name="obj"> Object
         /// <returns>API key with prefix</returns>
         public string GetApiKeyWithPrefix(string apiKey)
         {
@@ -216,17 +210,15 @@ namespace ima.Api.V1.Client
                 // determine which one to use
                 switch (auth)
                 {
-
                     default:
                         //TODO show warning about security definition not found
                         break;
                 }
             }
-
         }
 
         /// <summary>
-        /// Encode string in base64 format 
+        /// Encode string in base64 format
         /// </summary>
         /// <param name="text">String to be encoded</param>
         public static string Base64Encode(string text)
@@ -234,6 +226,5 @@ namespace ima.Api.V1.Client
             var textByte = System.Text.Encoding.UTF8.GetBytes(text);
             return System.Convert.ToBase64String(textByte);
         }
-
     }
 }

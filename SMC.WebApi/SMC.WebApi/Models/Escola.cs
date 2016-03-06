@@ -16,6 +16,7 @@ namespace SMC.WebApi.Models
         public string UfDemanda { get; set; }
         public string CepDemanda { get; set; }
         public string Telefone { get; set; }
+        public bool UserChange { get; set; }
 
         public void SyncData()
         {
