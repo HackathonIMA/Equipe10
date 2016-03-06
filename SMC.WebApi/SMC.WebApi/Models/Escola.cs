@@ -34,6 +34,9 @@ namespace SMC.WebApi.Models
         public string Telefone { get; set; }
         public string Endereco { get; set; }
 
+        public virtual ICollection<ComentarioModel> Comentarios { get; set; }
+        public virtual ICollection<MuralModel> Murais { get; set; }
+
         /// <summary>
         /// Esse metodo ira fazer o sincronismo entre a base de dados com os dados do web service
         /// </summary>

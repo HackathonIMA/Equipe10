@@ -50,7 +50,6 @@ namespace SMC.WebApi.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Escola_Id,Conteudo,Curtidas")] MuralModel muralModel)
         {
-            muralModel.Escola_Id = "0001f25f1af4";
             if (ModelState.IsValid)
             {
                 dbset.Add(muralModel);
