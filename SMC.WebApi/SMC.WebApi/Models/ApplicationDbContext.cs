@@ -21,9 +21,5 @@ namespace SMC.WebApi.Models
             modelBuilder.Configurations.Add(new EscolaMap());
             modelBuilder.Configurations.Add(new MuralModelMap());
         }
-
-        
-        public System.Data.Entity.DbSet<Escola> Escolas { get; set; }
-        public System.Data.Entity.DbSet<MuralModel> MuralModels { get; set; }
     }
 }

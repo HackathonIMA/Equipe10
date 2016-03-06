@@ -11,18 +11,24 @@ namespace SMC.WebApi.Controllers
     public class EscolaController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private DbSet<Escola> dbset;
+
+        public EscolaController()
+        {
+            dbset = db.Set<Escola>();
+        }
 
         // GET: api/Escola
         public IQueryable<Escola> GetEscolas()
         {
-            return db.Escolas;
+            return dbset;
         }
 
         // GET: api/Escola/5
         [ResponseType(typeof(Escola))]
         public IHttpActionResult GetEscola(string id)
         {
-            Escola escola = db.Escolas.Find(id);
+            Escola escola = dbset.Find(id);
             if (escola == null)
             {
                 return NotFound();
@@ -75,7 +81,7 @@ namespace SMC.WebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Escolas.Add(escola);
+            dbset.Add(escola);
 
             try
             {
@@ -100,13 +106,13 @@ namespace SMC.WebApi.Controllers
         [ResponseType(typeof(Escola))]
         public IHttpActionResult DeleteEscola(string id)
         {
-            Escola escola = db.Escolas.Find(id);
+            Escola escola = dbset.Find(id);
             if (escola == null)
             {
                 return NotFound();
             }
 
-            db.Escolas.Remove(escola);
+            dbset.Remove(escola);
             db.SaveChanges();
 
             return Ok(escola);
@@ -123,7 +129,7 @@ namespace SMC.WebApi.Controllers
 
         private bool EscolaExists(string id)
         {
-            return db.Escolas.Count(e => e.Id == id) > 0;
+            return dbset.Count(e => e.Id == id) > 0;
         }
     }
 }

@@ -1,23 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using SMC.WebApi.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using SMC.WebApi.Models;
 
 namespace SMC.WebApi.Controllers
 {
     public class PerfilEscolaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private DbSet<Escola> dbset;
+
+        public PerfilEscolaController()
+        {
+            dbset = db.Set<Escola>();
+        }
 
         // GET: PerfilEscola
         public ActionResult Index()
         {
-            return View(db.Escolas.ToList());
+            return View(dbset.ToList());
         }
 
         // GET: PerfilEscola/Details/5
@@ -27,7 +29,7 @@ namespace SMC.WebApi.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Escola escola = db.Escolas.Find(id);
+            Escola escola = dbset.Find(id);
             if (escola == null)
             {
                 return HttpNotFound();
@@ -42,7 +44,7 @@ namespace SMC.WebApi.Controllers
         }
 
         // POST: PerfilEscola/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -50,7 +52,7 @@ namespace SMC.WebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Escolas.Add(escola);
+                dbset.Add(escola);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +67,7 @@ namespace SMC.WebApi.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Escola escola = db.Escolas.Find(id);
+            Escola escola = dbset.Find(id);
             if (escola == null)
             {
                 return HttpNotFound();
@@ -74,7 +76,7 @@ namespace SMC.WebApi.Controllers
         }
 
         // POST: PerfilEscola/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -96,7 +98,7 @@ namespace SMC.WebApi.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Escola escola = db.Escolas.Find(id);
+            Escola escola = dbset.Find(id);
             if (escola == null)
             {
                 return HttpNotFound();
@@ -109,8 +111,8 @@ namespace SMC.WebApi.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Escola escola = db.Escolas.Find(id);
-            db.Escolas.Remove(escola);
+            Escola escola = dbset.Find(id);
+            dbset.Remove(escola);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

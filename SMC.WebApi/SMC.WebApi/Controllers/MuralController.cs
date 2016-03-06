@@ -1,24 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using SMC.WebApi.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using ima.Api.V1;
-using SMC.WebApi.Models;
 
 namespace SMC.WebApi.Controllers
 {
     public class MuralController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private DbSet<MuralModel> dbset;
+
+        public MuralController()
+        {
+            dbset = db.Set<MuralModel>();
+        }
 
         // GET: Mural
         public ActionResult Index()
         {
-            return View(db.MuralModels.ToList());
+            return View(dbset.ToList());
         }
 
         // GET: Mural/Details/5
@@ -28,7 +29,7 @@ namespace SMC.WebApi.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MuralModel muralModel = db.MuralModels.Find(id);
+            MuralModel muralModel = dbset.Find(id);
             if (muralModel == null)
             {
                 return HttpNotFound();
@@ -43,7 +44,7 @@ namespace SMC.WebApi.Controllers
         }
 
         // POST: Mural/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -52,7 +53,7 @@ namespace SMC.WebApi.Controllers
             muralModel.Escola_Id = "0001f25f1af4";
             if (ModelState.IsValid)
             {
-                db.MuralModels.Add(muralModel);
+                dbset.Add(muralModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -67,7 +68,7 @@ namespace SMC.WebApi.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MuralModel muralModel = db.MuralModels.Find(id);
+            MuralModel muralModel = dbset.Find(id);
             if (muralModel == null)
             {
                 return HttpNotFound();
@@ -76,7 +77,7 @@ namespace SMC.WebApi.Controllers
         }
 
         // POST: Mural/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -98,7 +99,7 @@ namespace SMC.WebApi.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MuralModel muralModel = db.MuralModels.Find(id);
+            MuralModel muralModel = dbset.Find(id);
             if (muralModel == null)
             {
                 return HttpNotFound();
@@ -111,8 +112,8 @@ namespace SMC.WebApi.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            MuralModel muralModel = db.MuralModels.Find(id);
-            db.MuralModels.Remove(muralModel);
+            MuralModel muralModel = dbset.Find(id);
+            dbset.Remove(muralModel);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
