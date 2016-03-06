@@ -211,6 +211,9 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EscolaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MuralController.cs" />
+    <Compile Include="Controllers\OldPerfilEscolaController.cs" />
+    <Compile Include="Controllers\PerfilEscolaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -222,6 +225,9 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Mappers\EscolaMap.cs" />
     <Compile Include="Models\Escola.cs" />
+    <Compile Include="Models\Mappers\MuralModelMap.cs" />
+    <Compile Include="Models\MuralModel.cs" />
+    <Compile Include="Models\PerfilEscolaModel.cs" />
     <Compile Include="Models\SolicitacaoComentarioModels.cs" />
     <Compile Include="Models\TimelineModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -283,6 +289,16 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Mural\Create.cshtml" />
+    <Content Include="Views\Mural\Delete.cshtml" />
+    <Content Include="Views\Mural\Details.cshtml" />
+    <Content Include="Views\Mural\Edit.cshtml" />
+    <Content Include="Views\Mural\Index.cshtml" />
+    <Content Include="Views\PerfilEscola\Index.cshtml" />
+    <Content Include="Views\PerfilEscola\Create.cshtml" />
+    <Content Include="Views\PerfilEscola\Delete.cshtml" />
+    <Content Include="Views\PerfilEscola\Details.cshtml" />
+    <Content Include="Views\PerfilEscola\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
