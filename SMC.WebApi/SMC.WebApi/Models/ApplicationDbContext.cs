@@ -22,6 +22,5 @@ namespace SMC.WebApi.Models
             modelBuilder.Configurations.Add(new MuralModelMap());
             modelBuilder.Configurations.Add(new ComentarioMap());
         }
-
     }
 }

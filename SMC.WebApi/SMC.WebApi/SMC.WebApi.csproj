@@ -212,6 +212,7 @@
     <Compile Include="Controllers\ComentarioController.cs" />
     <Compile Include="Controllers\EscolaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MuralApiController.cs" />
     <Compile Include="Controllers\MuralController.cs" />
     <Compile Include="Controllers\OldPerfilEscolaController.cs" />
     <Compile Include="Controllers\PerfilEscolaController.cs" />
@@ -242,6 +243,8 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cotil.jpg" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -277,7 +280,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -298,10 +303,10 @@
     <Content Include="Views\Mural\Edit.cshtml" />
     <Content Include="Views\Mural\Index.cshtml" />
     <Content Include="Views\PerfilEscola\Index.cshtml" />
-    <Content Include="Views\PerfilEscola\Create.cshtml" />
+    <Content Include="Views\PerfilEscola\Edit.cshtml" />
     <Content Include="Views\PerfilEscola\Delete.cshtml" />
     <Content Include="Views\PerfilEscola\Details.cshtml" />
-    <Content Include="Views\PerfilEscola\Edit.cshtml" />
+    <Content Include="Views\PerfilEscola\__Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

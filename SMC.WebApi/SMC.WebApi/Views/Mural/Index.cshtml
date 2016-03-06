@@ -1,45 +1,35 @@
 ﻿@model IEnumerable<SMC.WebApi.Models.MuralModel>
 
-@{
-    ViewBag.Title = "Index";
-}
+      <div class="panel-body">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Título</th>
+                <th>Conteúdo</th>
+                <th>Arquivos adicionados</th>
+                <th>Comentários</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
 
-<h2>Index</h2>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <th scope="row">@item.Id</th>
+                        <td>Titulo</td>
+                        <td>@item.Conteudo</td>
+                        <td>0</td>
+                        <td>@item.Curtidas</td>
+                        <td><a href="editar.html">Editar</a></td>
+                        <td class="excluir"><a href="editar.html">Excluir</a></td>
+                    </tr>
+                </tbody>
+            }
+         
+          <a href="comunicado.html"><button type="submit" class="btn btn-default">Criar comunicado</button></a>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Escola_Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Conteudo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Curtidas)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Escola_Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Conteudo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Curtidas)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
+        </table>
+      </div>

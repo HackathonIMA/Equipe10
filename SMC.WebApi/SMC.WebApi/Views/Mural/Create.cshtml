@@ -1,46 +1,25 @@
 ﻿@model SMC.WebApi.Models.MuralModel
-
-@{
-    ViewBag.Title = "Create";
-}
-
-<h2>Create</h2>
-
+    
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>MuralModel</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <label class="control-label col-md-2" for="Escola_Id">Escola:</label>
-            <div class="col-md-10">
-               <div>Escola XYX</div>
-            </div>
-        </div>
+    <div class="row">
+        <div class="col-md-10">
+            <h1>Criar novo comunicado</h1><br/><br/>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Título do comunicado</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Título do comunicado..">
+                </div><br/>
+                <textarea class="form-control" rows="6" placeholder="Digite aqui a mensagem do comunicado..."></textarea> <br /><br/>
+                <div class="form-group">
+                    <label for="exampleInputFile">Inserir arquivos</label>
+                    <input type="file" id="exampleInputFile">
+                </div><br/>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Conteudo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Conteudo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Conteudo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2" for="">Escola:</label>
-            <div class="col-md-10">
-                <div>10</div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+                <a href="home.html"><button type="submit" class="btn btn-default">Criar comunicado</button></a>
+            </form>
         </div>
     </div>
 }
