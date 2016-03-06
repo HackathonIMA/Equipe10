@@ -9,11 +9,9 @@ namespace SMC.WebApi.Models.Mappers
             ToTable("Escolas");
 
             HasKey(p => p.Id);
-            Property(p => p.Regime).HasMaxLength(250);
             Property(p => p.NomeUnidadeEscolar).HasMaxLength(250);
             Property(p => p.Bairro).HasMaxLength(250);
             Property(p => p.Descricao).HasMaxLength(500);
-            Property(p => p.EnderecoEscolaDemanda).HasMaxLength(250);
             Property(p => p.LogradouroDemanda).HasMaxLength(250);
             Property(p => p.MunicipioDemanda).HasMaxLength(70);
             Property(p => p.UfDemanda).HasMaxLength(2);
