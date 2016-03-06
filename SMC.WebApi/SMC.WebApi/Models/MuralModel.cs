@@ -8,8 +8,8 @@ namespace SMC.WebApi.Models
     public class MuralModel
     {
         public int Id { get; set; }
-        public string Escola_Id { get; set; }
         public string Conteudo { get; set; }
         public int Curtidas { get; set; }
+        public Escola Escola { get; set; }
     }
 }

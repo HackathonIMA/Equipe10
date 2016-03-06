@@ -26,6 +26,9 @@ namespace SMC.WebApi.Models
         public string CepDemanda { get; set; }
         public string Telefone { get; set; }
         public string Endereco { get; set; }
+
+        public virtual ICollection<ComentarioModel> Comentarios { get; set; }
+        public virtual ICollection<MuralModel> Murais { get; set; }
         public void SyncData()
         {
             var educaoApi = new EducaoApi();

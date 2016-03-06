@@ -13,9 +13,9 @@ namespace SMC.WebApi.Models.Mappers
         {
             ToTable("Mural");
             HasKey(p => p.Id);
-            Property(p => p.Escola_Id).HasMaxLength(50);
             Property(p => p.Conteudo).HasMaxLength(250);
             Property(p => p.Curtidas);
+            HasRequired(x => x.Escola);
         }
                    
 

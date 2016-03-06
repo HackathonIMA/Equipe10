@@ -20,6 +20,8 @@ namespace SMC.WebApi.Models.Mappers
             Property(p => p.CepDemanda).HasMaxLength(10);
             Property(p => p.Telefone).HasMaxLength(20);
             Property(p => p.Endereco).HasMaxLength(20);
+            HasMany(p => p.Comentarios);
+            HasMany(p => p.Murais);
         }
     }
 }

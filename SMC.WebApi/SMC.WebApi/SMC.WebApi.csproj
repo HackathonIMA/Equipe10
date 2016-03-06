@@ -209,6 +209,7 @@
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ComentarioController.cs" />
     <Compile Include="Controllers\EscolaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MuralController.cs" />
@@ -222,7 +223,9 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ComentarioModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Mappers\ComentarioMap.cs" />
     <Compile Include="Models\Mappers\EscolaMap.cs" />
     <Compile Include="Models\Escola.cs" />
     <Compile Include="Models\Mappers\MuralModelMap.cs" />
