@@ -14,8 +14,9 @@
 <body>
     <div class="header">
         <div class="menu">
-            <a href="../PerfilEscola/Edit/1">Minha Escola</a>
+            @Html.ActionLink("Minha Escola", "Edit", "PerfilEscola")
             @Html.ActionLink("Criar comunicado", "Create", "Mural")
+            @Html.ActionLink("Visualizar comunicados", "Index", "Mural")
             
         </div>
     </div>

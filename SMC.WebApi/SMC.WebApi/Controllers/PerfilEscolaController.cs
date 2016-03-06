@@ -63,16 +63,7 @@ namespace SMC.WebApi.Controllers
         // GET: PerfilEscola/Edit/5
         public ActionResult Edit(string id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Escola escola = dbset.Find(id);
-            if (escola == null)
-            {
-                return HttpNotFound();
-            }
-            return View(escola);
+            return View();
         }
 
         // POST: PerfilEscola/Edit/5

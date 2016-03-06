@@ -19,7 +19,7 @@ namespace SMC.WebApi.Controllers
         // GET: Mural
         public ActionResult Index()
         {
-            return View(dbset.ToList());
+            return View();
         }
 
         // GET: Mural/Details/5

@@ -16,7 +16,7 @@ namespace SMC.WebApi
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "PerfilEscola", action = "Edit", id = UrlParameter.Optional }
             );
         }
     }
